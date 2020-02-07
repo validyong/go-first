@@ -2,14 +2,7 @@ package app
 
 import (
 	"github.com/revel/revel"
-)
-
-var (
-	// AppVersion revel app version (ldflags)
-	AppVersion string
-
-	// BuildTime revel app build-time (ldflags)
-	BuildTime string
+	"github.com/validyong/go-first/app/controllers"
 )
 
 func init() {
@@ -36,6 +29,7 @@ func init() {
 	// revel.OnAppStart(ExampleStartupScript)
 	// revel.OnAppStart(InitDB)
 	// revel.OnAppStart(FillCache)
+	revel.OnAppStart(controllers.InitDB)
 }
 
 // HeaderFilter adds common security headers
